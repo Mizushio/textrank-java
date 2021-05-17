@@ -2,6 +2,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.seg.common.Term;
+import com.hankcs.hanlp.summary.TextRankKeyword;
+import com.hankcs.hanlp.tokenizer.NLPTokenizer;
+
 public class Textrank {
     public static void main(String[] args) {
         /**
@@ -23,11 +28,18 @@ public class Textrank {
         System.out.println("文件路径获取："+TxtPath);
         data.add(readFileByChars(TxtPath));
         }
-//        System.out.println(data.get(9).toString());
-
         /**
-         * 进行分割（头皮发麻）
+         * 找到了一个轮子，啊，不，是卡车，算法直接结束了
          */
+        for(int i=0;i< data.size();i++)
+        {
+            List<String> sentenceList = HanLP.extractSummary(data.get(i), 3);
+            System.out.println(sentenceList);
+        };
+/****************************以下纯属乱写pass就好*********************************************/
+//        String content = "我发誓不会再让喜欢我的小男孩受伤，可是好像也没人喜欢我，好像受伤的总是我";
+//        List<String> keywordList = HanLP.extractKeyword(content, 3);
+//        System.out.println(keywordList);
 
 
     }
