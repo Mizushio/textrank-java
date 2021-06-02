@@ -7,7 +7,7 @@ import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.summary.TextRankKeyword;
 import com.hankcs.hanlp.tokenizer.NLPTokenizer;
 
-public class Textrank {
+public class Textrankdemo {
     public static void main(String[] args) {
         /**
          * 读取文件列表
